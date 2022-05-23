@@ -2,9 +2,9 @@ module Spree
   module PageTracker
     extend ActiveSupport::Concern
 
-    class_methods do
-      def track_actions(actions = [])
-        after_action :track_event, only: actions
+    def self.included(base)
+      def base.track_actions(actions = [], base)
+        base.after_action :track_event, only: actions
       end
     end
 

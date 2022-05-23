@@ -61,4 +61,4 @@ module Spree
   end
 end
 
-Spree::OrderContents.send(:prepend, Spree::OrderContentsWithTracker)
+#Spree::OrderContents.send(:prepend, Spree::OrderContentsWithTracker)

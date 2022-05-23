@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.description = 'Track keywords search, checkout events, add to cart, remove from cart and other events.'
   s.required_ruby_version = '>= 2.2.7'
 
-  s.author    = ['Nimish Gupta', 'Tanmay Sinha', 'Nimish Mehta', "+ Vinsol Team"]
-  s.email     = 'info@vinsol.com'
-  s.homepage  = 'http://vinsol.com'
+  s.author    = ['Nimish Gupta', 'Tanmay Sinha', 'Nimish Mehta', "+ Vinsol Team", "Rahul Singh"]
+  s.email     = 'rahul97811@gmail.com'
+  s.homepage  = 'https://github.com/rahulsingh321/spree_events_tracker.git'
   s.license   = 'BSD-3'
 
   s.files        = `git ls-files`.split("\n")
@@ -17,10 +17,13 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  spree_version = '>= 3.2.0', '< 4.0'
-  s.add_dependency 'spree_extension', '~> 0.0.5'
+  spree_version = '>= 4.4.0'
+  s.add_dependency 'rails', '~> 6.1.5', '>= 6.1.5'
+  s.add_dependency 'spree', spree_version
+  s.add_dependency 'spree_backend', spree_version
+  s.add_dependency 'spree_frontend', spree_version
+  s.add_dependency 'spree_extension'
 
-  s.add_dependency 'spree_core', spree_version
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'coffee-rails'
@@ -34,6 +37,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
-  s.add_development_dependency 'spree_backend', spree_version
-  s.add_development_dependency 'spree_frontend', spree_version
 end
