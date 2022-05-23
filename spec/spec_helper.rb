@@ -1,41 +1,30 @@
-# Run Coverage report
-require 'simplecov'
-SimpleCov.start 'rails'
-
+# Configure Rails Environment
 ENV['RAILS_ENV'] = 'test'
 
-require File.expand_path('../dummy/config/environment',  __FILE__)
+require File.expand_path('../dummy/config/environment.rb', __FILE__)
 
-require 'rspec/rails'
-require 'factory_bot'
-require 'ffaker'
-require 'rspec/active_model/mocks'
-require 'shoulda/matchers'
+require 'spree_dev_tools/rspec/spec_helper'
 
-require 'spree/testing_support/authorization_helpers'
-require 'spree/testing_support/capybara_ext'
-require 'spree/testing_support/controller_requests'
-require 'spree/testing_support/factories'
-require 'spree/testing_support/url_helpers'
+# Requires supporting ruby files with custom matchers and macros, etc,
+# in spec/support/ and its subdirectories.
+Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].sort.each { |f| require f }
 
-Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
+# RSpec.configure do |config|
+#   config.infer_spec_type_from_file_location!
+#   config.raise_errors_for_deprecations!
+#   config.use_transactional_fixtures = false
 
-RSpec.configure do |config|
-  config.infer_spec_type_from_file_location!
-  config.raise_errors_for_deprecations!
-  config.use_transactional_fixtures = false
+#   config.include Spree::TestingSupport::UrlHelpers
+#   config.include Spree::TestingSupport::ControllerRequests, type: :controller
 
-  config.include Spree::TestingSupport::UrlHelpers
-  config.include Spree::TestingSupport::ControllerRequests, type: :controller
+#   config.include(Shoulda::Matchers::ActiveModel, type: :model)
+#   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 
-  config.include(Shoulda::Matchers::ActiveModel, type: :model)
-  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+#   config.mock_with :rspec do |mock|
+#     mock.syntax = [:should, :expect]
+#   end
+#   config.color = true
 
-  config.mock_with :rspec do |mock|
-    mock.syntax = [:should, :expect]
-  end
-  config.color = true
-
-  config.fail_fast = ENV['FAIL_FAST'] || false
-  config.order = "random"
-end
+#   config.fail_fast = ENV['FAIL_FAST'] || false
+#   config.order = "random"
+# end
