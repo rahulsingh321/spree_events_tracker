@@ -74,3 +74,6 @@ build/
 
 .ruby-gemset
 gemfiles/*.gemfile.lock
+
+# node modules
+node_modules/*
