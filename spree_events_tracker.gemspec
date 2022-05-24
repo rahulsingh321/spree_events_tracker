@@ -27,4 +27,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'spree_dev_tools'
   s.add_development_dependency 'pg'
   s.add_development_dependency 'net-smtp'
+  s.add_development_dependency 'shoulda-matchers', '~> 5.0'
 end

@@ -7,9 +7,4 @@ end
 
 gem 'rails-controller-testing'
 
-group :development, :test do
-  gem 'pg'
-  gem 'shoulda-matchers'
-end
-
 gemspec
