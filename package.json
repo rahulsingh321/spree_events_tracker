@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@hotwired/turbo-rails": "^7.1.2"
+    "@hotwired/turbo-rails": "^7.1.2",
+    "@spree/dashboard": "^0.2.0"
   }
 }
